@@ -1,0 +1,892 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="BookmarkManager">
+    <bookmark url="file://$PROJECT_DIR$/recsys2018/public/index.html" description="&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&lt;a href=&quot;generic.html&quot;&gt;&#10;" line="67" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="119c1911-8884-45db-9fe4-57082a8bfa56" name="Default" comment="" />
+    <ignored path="$PROJECT_DIR$/out/" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CoverageDataManager">
+    <SUITE FILE_PATH="coverage/FitnessWebsite$Hybrid.coverage" NAME="Hybrid Coverage Results" MODIFIED="1534380879587" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/recsys2018" />
+  </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="data" type="feb32156:DbDataSourceImpl" />
+      </path>
+    </expand>
+    <select />
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="Hybrid_logistic.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/FitnessVideoRecommend/Hybrid_logistic.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="4065">
+              <caret line="277" column="15" selection-end-line="309" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="RealVideoData.csv" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/FitnessVideoRecommend/rawdata/RealVideoData.csv">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="254475">
+              <caret line="16965" column="28" selection-start-line="16965" selection-start-column="28" selection-end-line="16965" selection-end-column="28" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="server.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/FitnessVideoRecommend/server.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="6015">
+              <caret line="401" column="44" selection-start-line="401" selection-start-column="44" selection-end-line="401" selection-end-column="44" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Hybrid.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/FitnessVideoRecommend/Hybrid.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="150">
+              <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
+              <folding>
+                <element signature="e#0#11#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="highlight.css" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/FitnessVideoRecommend/highlight.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="30">
+              <caret line="2" lean-forward="true" selection-start-line="2" selection-end-line="2" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Hybrid_moe.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/FitnessVideoRecommend/Hybrid_moe.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="3165">
+              <caret line="217" selection-start-line="217" selection-end-line="217" selection-end-column="16" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="CSS File" />
+        <option value="JavaScript File" />
+      </list>
+    </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>listsubinfo</find>
+      <find>image</find>
+      <find>noscript</find>
+      <find>s_bound</find>
+      <find>await</find>
+      <find>LabelVideo</find>
+      <find>console</find>
+      <find>resSize</find>
+      <find>y.video</find>
+      <find>googlelogin</find>
+      <find>index_backup</find>
+      <find>videomain</find>
+      <find>main.css</find>
+      <find>style.css</find>
+      <find>FirstUser</find>
+      <find>firstuser</find>
+      <find>labelid</find>
+      <find>user_history</find>
+      <find>START</find>
+      <find>implicit</find>
+      <find>data_</find>
+      <find>data.db</find>
+      <find>data</find>
+      <find>hybrid</find>
+      <find>logistic</find>
+      <find>findlabel</find>
+      <find>IwDHNXc_CEQ</find>
+      <find>2tXrAJ7UJUg</find>
+      <find>mix</find>
+      <find>BA_y-1z4120</find>
+    </findStrings>
+    <replaceStrings>
+      <replace>image</replace>
+      <replace>open</replace>
+      <replace>db = new sql.Database(&quot;data.db&quot;);</replace>
+      <replace />
+    </replaceStrings>
+    <dirStrings>
+      <dir>$PROJECT_DIR$/recsys2018/public/css</dir>
+      <dir>$PROJECT_DIR$/recsys2018/public/</dir>
+    </dirStrings>
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/recsys2018/elements.html" />
+        <option value="$PROJECT_DIR$/recsys2018/public/js/main.js" />
+        <option value="$PROJECT_DIR$/recsys2018/public/generic.html" />
+        <option value="$PROJECT_DIR$/recsys2018/public/js/util.js" />
+        <option value="$PROJECT_DIR$/recsys2018/public/index_backup.html" />
+        <option value="$PROJECT_DIR$/recsys2018/public/css/style.css" />
+        <option value="$PROJECT_DIR$/recsys2018/public/js/bodymovin.js" />
+        <option value="$PROJECT_DIR$/recsys2018/public/js/button-data01.js" />
+        <option value="$PROJECT_DIR$/recsys2018/LabelVideo.py" />
+        <option value="$PROJECT_DIR$/recsys2018/public/css/history.css" />
+        <option value="$PROJECT_DIR$/recsys2018/history.html" />
+        <option value="$PROJECT_DIR$/recsys2018/public/js/video_script.js" />
+        <option value="$PROJECT_DIR$/recsys2018/Implicit.py" />
+        <option value="$PROJECT_DIR$/recsys2018/FirstUser.py" />
+        <option value="$PROJECT_DIR$/recsys2018/public/css/main.css" />
+        <option value="$PROJECT_DIR$/recsys2018_backup/public/picker_script.js" />
+        <option value="$PROJECT_DIR$/recsys2018/public/js/refreshUser.js" />
+        <option value="$PROJECT_DIR$/recsys2018/public/index.html" />
+        <option value="$PROJECT_DIR$/recsys2018/public/js/picker_script.js" />
+        <option value="$PROJECT_DIR$/recsys2018/createUsers.js" />
+        <option value="$PROJECT_DIR$/recsys2018/public/css/videomain.css" />
+        <option value="$PROJECT_DIR$/recsys2018/video.html" />
+        <option value="$PROJECT_DIR$/recsys2018/public/css/style_second.css" />
+        <option value="$PROJECT_DIR$/recsys2018/fetchData.js" />
+        <option value="$PROJECT_DIR$/recsys2018/videomain.html" />
+        <option value="$PROJECT_DIR$/recsys2018/Hybrid.py" />
+        <option value="$PROJECT_DIR$/recsys2018/server.js" />
+        <option value="$PROJECT_DIR$/recsys2018_backup/server.js" />
+        <option value="$PROJECT_DIR$/recsys2018_backup/public/css/style_second.css" />
+        <option value="$PROJECT_DIR$/recsys2018_backup/public/css/videomain.css" />
+        <option value="$PROJECT_DIR$/FitnessVideoRecommend/public/css/videomain.css" />
+        <option value="$PROJECT_DIR$/FitnessVideoRecommend/videomain.html" />
+        <option value="$PROJECT_DIR$/FitnessVideoRecommend/server_backup.js" />
+        <option value="$PROJECT_DIR$/FitnessVideoRecommend/createVideos_moe.js" />
+        <option value="$PROJECT_DIR$/FitnessVideoRecommend/createVideos.js" />
+        <option value="$PROJECT_DIR$/FitnessVideoRecommend/createVideos_logistic.js" />
+        <option value="$PROJECT_DIR$/FitnessVideoRecommend/createUsers.js" />
+        <option value="$PROJECT_DIR$/FitnessVideoRecommend/createUsers_logistic.js" />
+        <option value="$PROJECT_DIR$/FitnessVideoRecommend/Implicit_moe.py" />
+        <option value="$PROJECT_DIR$/FitnessVideoRecommend/Implicit.py" />
+        <option value="$PROJECT_DIR$/FitnessVideoRecommend/LabelVideo_moe.py" />
+        <option value="$PROJECT_DIR$/FitnessVideoRecommend/LabelVideo.py" />
+        <option value="$PROJECT_DIR$/FitnessVideoRecommend/createUsers_moe.js" />
+        <option value="$PROJECT_DIR$/FitnessVideoRecommend/server_logistic.js" />
+        <option value="$PROJECT_DIR$/FitnessVideoRecommend/fetchData.js" />
+        <option value="$PROJECT_DIR$/FitnessVideoRecommend/Hybrid_logistic.py" />
+        <option value="$PROJECT_DIR$/FitnessVideoRecommend/Hybrid_moe.py" />
+        <option value="$PROJECT_DIR$/FitnessVideoRecommend/server_moe.js" />
+        <option value="$PROJECT_DIR$/FitnessVideoRecommend/server.js" />
+        <option value="$PROJECT_DIR$/FitnessVideoRecommend/Hybrid.py" />
+        <option value="$PROJECT_DIR$/FitnessVideoRecommend/highlight.css" />
+      </list>
+    </option>
+  </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+    <sorting>DEFINITION_ORDER</sorting>
+  </component>
+  <component name="MavenProjectNavigator">
+    <treeState>
+      <expand />
+      <select />
+    </treeState>
+  </component>
+  <component name="NamedScopeManager">
+    <scope name="server.js" pattern="" />
+  </component>
+  <component name="NodePackageJsonFileManager">
+    <packageJsonPaths />
+  </component>
+  <component name="ProjectFrameBounds" extendedState="1">
+    <option name="x" value="231" />
+    <option name="y" value="75" />
+    <option name="width" value="1384" />
+    <option name="height" value="865" />
+  </component>
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="FitnessWebsite" type="b2602c69:ProjectViewProjectNode" />
+              <item name="FitnessWebsite" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="FitnessWebsite" type="b2602c69:ProjectViewProjectNode" />
+              <item name="FitnessWebsite" type="462c0819:PsiDirectoryNode" />
+              <item name="FitnessVideoRecommend" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="SearchEverywhereHistoryKey" value="ssh&#9;ACTION&#9;com.jetbrains.plugins.remotesdk.console.RunSshConsoleAction" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="list.type.of.created.stylesheet" value="CSS" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="settings.github" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/FitnessVideoRecommend" />
+      <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/recsys2018" />
+      <recent name="$PROJECT_DIR$/recsys2018/public/css" />
+      <recent name="$PROJECT_DIR$/recsys2018/public/js" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/FitnessVideoRecommend" />
+      <recent name="$PROJECT_DIR$/recsys2018" />
+      <recent name="$PROJECT_DIR$/recsys2018/public/js" />
+      <recent name="$PROJECT_DIR$/recsys2018/public" />
+      <recent name="$PROJECT_DIR$/recsys2018/rawdata" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager" selected="Node.js.server.js">
+    <configuration default="true" type="Application" factoryName="Application">
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+    </configuration>
+    <configuration default="true" type="JUnit" factoryName="JUnit">
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="METHOD_NAME" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <patterns />
+    </configuration>
+    <configuration name="createUsers.js" type="NodeJSConfigurationType" factoryName="Node.js" temporary="true" nameIsGenerated="true" path-to-js-file="createUsers.js" working-dir="$PROJECT_DIR$/FitnessVideoRecommend" />
+    <configuration name="createUsers_moe.js" type="NodeJSConfigurationType" factoryName="Node.js" temporary="true" nameIsGenerated="true" path-to-js-file="createUsers_moe.js" working-dir="$PROJECT_DIR$/FitnessVideoRecommend" />
+    <configuration name="fetchData.js" type="NodeJSConfigurationType" factoryName="Node.js" temporary="true" nameIsGenerated="true" path-to-js-file="fetchData.js" working-dir="$PROJECT_DIR$/FitnessVideoRecommend" />
+    <configuration name="server.js" type="NodeJSConfigurationType" factoryName="Node.js" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/FitnessVideoRecommend/server.js" working-dir="$PROJECT_DIR$/FitnessVideoRecommend" />
+    <configuration name="server_logistic.js" type="NodeJSConfigurationType" factoryName="Node.js" temporary="true" nameIsGenerated="true" path-to-js-file="server_logistic.js" working-dir="$PROJECT_DIR$/FitnessVideoRecommend" />
+    <configuration name="server_moe.js" type="NodeJSConfigurationType" factoryName="Node.js" temporary="true" nameIsGenerated="true" path-to-js-file="server_moe.js" working-dir="$PROJECT_DIR$/FitnessVideoRecommend" />
+    <configuration name="Hybrid" type="PythonConfigurationType" factoryName="Python">
+      <module name="FitnessWebsite" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="/usr/local/bin/python3.6" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/recsys2018" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/recsys2018/Hybrid.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="true" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+    </configuration>
+    <configuration default="true" type="PythonConfigurationType" factoryName="Python">
+      <module name="FitnessWebsite" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="true" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+    </configuration>
+    <configuration name="&lt;template&gt;" type="TestNG" default="true" selected="false">
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
+    </configuration>
+    <list>
+      <item itemvalue="Node.js.server.js" />
+      <item itemvalue="Python.Hybrid" />
+      <item itemvalue="Node.js.createUsers.js" />
+      <item itemvalue="Node.js.server_moe.js" />
+      <item itemvalue="Node.js.createUsers_moe.js" />
+      <item itemvalue="Node.js.server_logistic.js" />
+      <item itemvalue="Node.js.fetchData.js" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Node.js.server_moe.js" />
+        <item itemvalue="Node.js.server_logistic.js" />
+        <item itemvalue="Node.js.fetchData.js" />
+        <item itemvalue="Node.js.createUsers_moe.js" />
+        <item itemvalue="Node.js.createUsers.js" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="119c1911-8884-45db-9fe4-57082a8bfa56" name="Default" comment="" />
+      <created>1532619102341</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1532619102341</updated>
+      <workItem from="1532619103808" duration="37762000" />
+      <workItem from="1532698647163" duration="2869000" />
+      <workItem from="1532717197496" duration="1822000" />
+      <workItem from="1532719028782" duration="29013000" />
+      <workItem from="1532802463336" duration="49908000" />
+      <workItem from="1533339961944" duration="767000" />
+      <workItem from="1533518034488" duration="7000" />
+      <workItem from="1533518050263" duration="9000" />
+      <workItem from="1534214388461" duration="15939000" />
+      <workItem from="1534379734515" duration="3745000" />
+      <workItem from="1534531006480" duration="16818000" />
+      <workItem from="1534813687272" duration="1715000" />
+      <workItem from="1535399829737" duration="5991000" />
+      <workItem from="1536422469165" duration="12000" />
+      <workItem from="1537032075233" duration="33742000" />
+      <workItem from="1537858229644" duration="1550000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="201669000" />
+  </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="231" y="75" width="1384" height="865" extended-state="0" />
+    <layout>
+      <window_info anchor="bottom" id="TODO" order="6" weight="0.32985657" />
+      <window_info anchor="bottom" id="Messages" order="10" />
+      <window_info anchor="right" id="Palette&#9;" order="7" />
+      <window_info anchor="bottom" id="Event Log" order="12" sideWeight="0.5008" side_tool="true" weight="0.32985657" />
+      <window_info anchor="right" id="Maven Projects" order="6" weight="0.3296" />
+      <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="8" show_stripe_button="false" />
+      <window_info anchor="bottom" x="159" y="330" width="545" height="509" id="Run" order="2" sideWeight="0.4992" weight="0.3294271" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="9" sideWeight="0.4992" visible="true" weight="0.3294271" />
+      <window_info id="Designer" order="4" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.29135618" />
+      <window_info anchor="right" id="Database" order="3" weight="0.3296" />
+      <window_info id="Learn" order="2" weight="0.3296" />
+      <window_info anchor="right" id="SciView" order="5" weight="0.3296" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.2496" />
+      <window_info id="Favorites" order="3" side_tool="true" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.39895698" />
+      <window_info anchor="bottom" id="Concurrent Activities Diagram" order="11" weight="0.32985657" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="right" id="Commander" order="0" weight="0.4" />
+      <window_info anchor="right" x="0" y="0" width="273" height="664" id="Documentation" order="4" side_tool="true" weight="0.3296" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32985657" />
+    </layout>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <option name="time" value="2" />
+    </breakpoint-manager>
+  </component>
+  <component name="antWorkspaceConfiguration">
+    <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
+    <option name="FILTER_TARGETS" value="false" />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/recsys2018/public/css/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="142">
+          <caret line="104" column="28" lean-forward="true" selection-end-line="145" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/recsys2018/public/css/videomain.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="93">
+          <caret line="112" column="10" lean-forward="true" selection-end-line="504" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/recsys2018/public/css/style_second.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="114">
+          <caret line="90" lean-forward="true" selection-end-line="200" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FitnessVideoRecommend/public/css/style_second.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="257">
+          <caret line="188" column="13" lean-forward="true" selection-start-line="188" selection-start-column="13" selection-end-line="188" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FitnessVideoRecommend/public/css/noscript.css">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FitnessVideoRecommend/public/css/picker_style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="7" column="22" lean-forward="true" selection-start-line="7" selection-start-column="22" selection-end-line="7" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FitnessVideoRecommend/public/css/videomain.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3675">
+          <caret line="245" column="14" lean-forward="true" selection-start-line="245" selection-start-column="14" selection-end-line="245" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/recsys2018_backup copy/public/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="163">
+          <caret line="11" column="41" selection-start-line="11" selection-start-column="41" selection-end-line="11" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/recsys2018_backup copy/videomain_backup.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="6" column="37" selection-start-line="6" selection-start-column="37" selection-end-line="6" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FitnessVideoRecommend/public/js/picker_script.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FitnessVideoRecommend/public/js/main.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="13" column="46" lean-forward="true" selection-start-line="13" selection-start-column="46" selection-end-line="13" selection-end-column="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FitnessVideoRecommend/public/js/video_script.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FitnessVideoRecommend/public/css/style.css">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FitnessVideoRecommend/public/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3690">
+          <caret line="246" column="29" selection-start-line="246" selection-start-column="29" selection-end-line="246" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FitnessVideoRecommend/video.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FitnessVideoRecommend/videomain.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FitnessVideoRecommend/Hybrid.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#0#11#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/recsys2018/server.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="155">
+          <caret line="370" column="35" selection-start-line="370" selection-start-column="35" selection-end-line="370" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FitnessVideoRecommend/public/css/main.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="9615">
+          <caret line="641" selection-start-line="641" selection-end-line="641" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/recsys2018/Implicit_backup.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/recsys2018/Hybrid_backup.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FitnessVideoRecommend/rawdata/preference.csv">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FitnessVideoRecommend/rawdata/newpreference.csv">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="9" column="25" selection-start-line="9" selection-start-column="25" selection-end-line="9" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/6676dfa6-c630-4fd8-9685-d7997dc46d1f/console.sql">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FitnessVideoRecommend/createVideos.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="930">
+          <caret line="62" column="53" selection-start-line="62" selection-start-column="53" selection-end-line="62" selection-end-column="53" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FitnessVideoRecommend/createUsers_logistic.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FitnessVideoRecommend/Implicit_logistic.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FitnessVideoRecommend/Implicit_moe.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1402">
+          <caret line="19" selection-start-line="19" selection-end-line="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FitnessVideoRecommend/Implicit.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="20" column="16" selection-start-line="20" selection-start-column="16" selection-end-line="20" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FitnessVideoRecommend/LabelVideo_moe.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="264">
+          <caret line="36" column="20" selection-start-line="36" selection-start-column="20" selection-end-line="36" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FitnessVideoRecommend/LabelVideo.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="540">
+          <caret line="36" column="16" selection-start-line="36" selection-start-column="16" selection-end-line="36" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FitnessVideoRecommend/server_backup.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="19" selection-start-line="2" selection-start-column="19" selection-end-line="2" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FitnessVideoRecommend/createVideos_logistic.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-249">
+          <caret line="6" column="12" selection-start-line="6" selection-start-column="12" selection-end-line="6" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FitnessVideoRecommend/createUsers.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" selection-start-line="5" selection-end-line="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FitnessVideoRecommend/createUsers_moe.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" selection-start-line="5" selection-end-line="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FitnessVideoRecommend/rawdata/RealVideoData_logistic.csv">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="91">
+          <caret line="6019" column="52" selection-start-line="6019" selection-start-column="52" selection-end-line="6019" selection-end-column="52" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FitnessVideoRecommend/createVideos_moe.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="7" selection-start-line="7" selection-end-line="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FitnessVideoRecommend/fetchData.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="9" column="1" selection-start-line="9" selection-start-column="1" selection-end-line="9" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FitnessVideoRecommend/LabelVideo_logistic.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1168" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FitnessVideoRecommend/rawdata/RealVideoData.csv">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="254475">
+          <caret line="16965" column="28" selection-start-line="16965" selection-start-column="28" selection-end-line="16965" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FitnessVideoRecommend/Hybrid_logistic.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4065">
+          <caret line="277" column="15" selection-end-line="309" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FitnessVideoRecommend/rawdata/RealVideoData_moe.csv">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="145">
+          <caret line="19917" column="11" selection-start-line="19917" selection-end-line="19917" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FitnessVideoRecommend/server_logistic.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="134">
+          <caret line="448" column="25" selection-start-line="448" selection-start-column="25" selection-end-line="448" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FitnessVideoRecommend/server_moe.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="104">
+          <caret line="447" column="37" selection-start-line="447" selection-start-column="37" selection-end-line="447" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FitnessVideoRecommend/Hybrid_moe.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3165">
+          <caret line="217" selection-start-line="217" selection-end-line="217" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FitnessVideoRecommend/server.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="6015">
+          <caret line="401" column="44" selection-start-line="401" selection-start-column="44" selection-end-line="401" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FitnessVideoRecommend/Hybrid.py.tex">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="50">
+          <caret line="32" lean-forward="true" selection-start-line="32" selection-end-line="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.xhtml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FitnessVideoRecommend/highlight.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" lean-forward="true" selection-start-line="2" selection-end-line="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FitnessVideoRecommend/Hybrid.py.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="12" column="42" lean-forward="true" selection-start-line="12" selection-start-column="42" selection-end-line="12" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FitnessVideoRecommend/Hybrid.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
+          <folding>
+            <element signature="e#0#11#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ArtifactsStructureConfigurable.UI">
+        <settings>
+          <artifact-editor />
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="FacetStructureConfigurable.UI">
+        <settings>
+          <last-edited>No facets are configured</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="GlobalLibrariesConfigurable.UI">
+        <settings>
+          <last-edited>bootstrap</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="JdkListConfigurable.UI">
+        <settings>
+          <last-edited>Python 3.6</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ModuleStructureConfigurable.UI">
+        <settings>
+          <last-edited>FitnessWebsite</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+                <option value="0.6" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectJDKs.UI">
+        <settings>
+          <last-edited>9.0</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectLibrariesConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ScopeChooserConfigurable.UI">
+        <settings>
+          <last-edited>server.js</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+          <order>
+            <scope name="server.js" />
+          </order>
+        </settings>
+      </state>
+    </states>
+  </component>
+</project>
