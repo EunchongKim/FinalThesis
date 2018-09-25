@@ -1,0 +1,259 @@
+<!DOCTYPE HTML>
+<!--
+	Phantom by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html xmlns = "http://www.w3.org/1999/xhtml" lang = "en-GB" xml:lang = "en-GB">
+	<head>
+		<title>Fitness Video Recommendation</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="css/main.css" />
+		<noscript><link rel="stylesheet" href="css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<div class="inner">
+
+							<section>
+								<h2 align="right">Do you visit before?<br/> Click here to skip</h2>
+								<form action="/prefer_videos" method="post">
+									<ul class="actions">
+										<li id = "continue"><button onclick="pickerstart()" class="primary continue" id="sendcont" name="continueMethod">SKIP</button></li>
+									</ul>
+								</form>
+							</section>
+
+							<!-- Logo -->
+								<a href="index.html" class="logo">
+									<span class="symbol"><img src="image/running.png" alt="" /></span><span class="title">Fitness Video Recommendation</span>
+								</a>
+
+						</div>
+					</header>
+
+				<!-- Main -->
+					<div id="main">
+						<canvas id='canvas'></canvas>
+						<div class="inner">
+							<header>
+								<h1>This is for the fitness video recommender system.<br /> Please choose at least 2 labels you want to explore!<br /></h1>
+							</header>
+							<section class="tiles">
+								<article class="style1">
+									<span class="image">
+										<img src="image/pic01.jpg" alt="" />
+									</span>
+									<a id = "b1">
+										<h2>Weight Training</h2>
+										<div class="content">
+											<p>Weight training is a common type of strength training for developing the strength and size of skeletal muscles.</p>
+										</div>
+									</a>
+								</article>
+								<article class="style2">
+									<span class="image">
+										<img src="image/pic02.jpg" alt="" />
+									</span>
+									<a id = "b2">
+										<h2>Gym</h2>
+										<div class="content">
+											<p>A gym, short for gymnasium, is an open air or covered location for gymnastics, athletics, and gymnastic services.</p>
+										</div>
+									</a>
+								</article>
+								<article class="style3">
+									<span class="image">
+										<img src="image/pic03.jpg" alt="" />
+									</span>
+									<a class="pref" id = "b3">
+										<h2>Squat</h2>
+										<div class="content">
+											<p>In strength training and fitness, the squat is a compound, full body exercise that trains primarily the muscles of the thighs, hips and buttocks alike.</p>
+										</div>
+									</a>
+								</article>
+								<article class="style4">
+									<span class="image">
+										<img src="image/pic04.jpg" alt="" />
+									</span>
+									<a class="pref" id = "b4">
+										<h2>Barbell</h2>
+										<div class="content">
+											<p>A barbell is a piece of exercise equipment consisting of a long bar, usually with weights attached at each end.</p>
+										</div>
+									</a>
+								</article>
+								<article class="style5">
+									<span class="image">
+										<img src="image/pic05.jpg" alt="" />
+									</span>
+									<a class="pref" id = "b5">
+										<h2>Stretching</h2>
+										<div class="content">
+											<p>Stretching is an exercise in which a specific muscle or tendon is deliberately flexed or stretched.</p>
+										</div>
+									</a>
+								</article>
+								<article class="style6">
+									<span class="image">
+										<img src="image/pic06.jpg" alt="" />
+									</span>
+									<a class="pref" id = "b6">
+										<h2>Aerobics</h2>
+										<div class="content">
+											<p>Aerobics is a form of exercise combining rhythmic aerobic exercise with stretching and strength training routines.</p>
+										</div>
+									</a>
+								</article>
+								<article class="style1">
+									<span class="image">
+										<img src="image/pic07.jpg" alt="" />
+									</span>
+									<a class="pref" id = "b7">
+										<h2>Pull-up</h2>
+										<div class="content">
+											<p>A pull-up is an upper-body compound pulling exercise.</p>
+										</div>
+									</a>
+								</article>
+								<article class="style2">
+									<span class="image">
+										<img src="image/pic08.jpg" alt="" />
+									</span>
+									<a class="pref" id = "b8">
+										<h2>Dumbbell</h2>
+										<div class="content">
+											<p>The dumbbell, a type of free weight, is a piece of equipment used in weight training.</p>
+										</div>
+									</a>
+								</article>
+								<article class="style3">
+									<span class="image">
+										<img src="image/pic09.jpg" alt="" />
+									</span>
+									<a class="pref" id = "b9">
+										<h2>Bodyweight Exercise</h2>
+										<div class="content">
+											<p>Bodyweight exercises are strength training exercises that do not require free weights or machines.</p>
+										</div>
+									</a>
+								</article>
+								<article class="style4">
+									<span class="image">
+										<img src="image/pic10.jpg" alt="" />
+									</span>
+									<a class="pref" id = "b10">
+										<h2>Pilates</h2>
+										<div class="content">
+											<p>Pilates is a physical fitness system developed in the early 20th century by Joseph Pilates.</p>
+										</div>
+									</a>
+								</article>
+								<article class="style5">
+									<span class="image">
+										<img src="image/pic11.jpg" alt="" />
+									</span>
+									<a class="pref" id = "b11">
+										<h2>Kettlebell</h2>
+										<div class="content">
+											<p>The kettlebell or girya is a cast-iron or cast steel weight used to perform ballistic exercises.</p>
+										</div>
+									</a>
+								</article>
+								<article class="style6">
+									<span class="image">
+										<img src="image/pic12.jpg" alt="" />
+									</span>
+									<a class="pref" id = "b12">
+										<h2>Indoor Cycling</h2>
+										<div class="content">
+											<p>Indoor cycling, so-called spinning, is a form of exercise using a special stationary bicycle with a weighted flywheel in a classroom setting.</p>
+										</div>
+									</a>
+								</article>
+								<article class="style1">
+									<span class="image">
+										<img src="image/pic03.jpg" alt="" />
+									</span>
+									<a class="pref" id = "b13">
+										<h2>Treadmill</h2>
+										<div class="content">
+											<p>A treadmill is a device generally for walking or running while staying in the same place.</p>
+										</div>
+									</a>
+								</article>
+								<article class="style2">
+									<span class="image">
+										<img src="image/pic04.jpg" alt="" />
+									</span>
+									<a class="pref" id = "b14">
+										<h2>Exercise Ball</h2>
+										<div class="content">
+											<p>An exercise ball, also known as a Swiss Ball, is a ball constructed of soft elastic filled with air.</p>
+										</div>
+									</a>
+								</article>
+								<article class="style3">
+									<span class="image">
+										<img src="image/pic05.jpg" alt="" />
+									</span>
+									<a class="pref" id = "b15">
+										<h2>Health Club</h2>
+										<div class="content">
+											<p>A health club is a place which houses exercise equipment for the purpose of physical exercise.</p>
+										</div>
+									</a>
+								</article>
+								<article class="style4">
+									<span class="image">
+										<img src="image/pic06.jpg" alt="" />
+									</span>
+									<a class="pref" id = "b16">
+										<h2>Burpee</h2>
+										<div class="content">
+											<p>The burpee, or squat thrust, is a full body exercise used in strength training and as an aerobic exercise.</p>
+										</div>
+									</a>
+								</article>
+							</section>
+							<section>
+								<br />
+								<br />
+								<ul class="actions">
+									<li id = "submit"><button class="primary submit">SUBMIT</button></li>
+								</ul>
+							</section>
+							<form action="" method="post">
+								<ul class="actions">
+									<li id = "refresh"><button onclick="sendRefresh()" class="primary refresh" id="sendref" name="refreshMethod">REFRESH</button></li>
+								</ul>
+							</form>
+						</div>
+					</div>
+
+				<!-- Footer -->
+					<footer id="footer">
+						<div class="inner">
+							<ul class="copyright">
+								<li>&#169; Copyright information </li><li>Design: HTML5 UP</li><li>Description: Wikipedia</li><li>Images: Unsplash</li>
+							</ul>
+						</div>
+					</footer>
+			</div>
+
+		<!-- Scripts -->
+		<script src="js/picker_script.js"></script>
+		<script src="js/jquery.min.js"></script>
+		<script src="js/browser.min.js"></script>
+		<script src="js/breakpoints.min.js"></script>
+		<script src="js/util.js"></script>
+		<script src="js/main.js"></script>
+
+	</body>
+</html>

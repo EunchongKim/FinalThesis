@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Hybrid.py</title>
+<link rel="stylesheet" type="text/css" href="highlight.css">
+</head>
+<body class="hl">
+<pre class="hl"><span class="hl kwa">import</span> math
+<span class="hl kwa">import</span> numpy <span class="hl kwa">as</span> np
+<span class="hl kwa">import</span> sys
+<span class="hl kwa">import</span> json
+<span class="hl kwa">import</span> sqlite3
+<span class="hl kwa">from</span> sqlite3 <span class="hl kwa">import</span> Error
+<span class="hl kwa">import</span> copy
+
+videoNum <span class="hl opt">=</span> <span class="hl num">70</span>
+labelNum <span class="hl opt">=</span> <span class="hl num">16</span>
+
+labelPosInDB <span class="hl opt">=</span> <span class="hl num">5</span>
+db_videos <span class="hl opt">= []</span>
+db_users <span class="hl opt">= []</span>
+db_history <span class="hl opt">= []</span>
+user_history <span class="hl opt">= []</span>
+currentUser <span class="hl opt">=</span> <span class="hl num">10</span>
+
+diversity_weight <span class="hl opt">=</span> <span class="hl num">0.3</span>
+
+
+<span class="hl kwa">def</span> <span class="hl kwd">read_in</span><span class="hl opt">():</span>
+    line <span class="hl opt">=</span> sys<span class="hl opt">.</span>stdin<span class="hl opt">.</span><span class="hl kwd">readline</span><span class="hl opt">()</span>
+    <span class="hl kwa">return</span> json<span class="hl opt">.</span><span class="hl kwd">loads</span><span class="hl opt">(</span>line<span class="hl opt">)</span>
+
+
+<span class="hl kwa">def</span> <span class="hl kwd">create_connection</span><span class="hl opt">(</span>db<span class="hl opt">):</span>
+
+    <span class="hl kwa">try</span><span class="hl opt">:</span>
+        conn <span class="hl opt">=</span> sqlite3<span class="hl opt">.</span><span class="hl kwd">connect</span><span class="hl opt">(</span>db<span class="hl opt">)</span>
+        <span class="hl kwa">return</span> conn
+    <span class="hl kwa">except</span> Error <span class="hl kwa">as</span> e<span class="hl opt">:</span>
+        <span class="hl kwa">print</span><span class="hl opt">(</span>e<span class="hl opt">)</span>
+
+    <span class="hl kwa">return None</span>
+
+
+database <span class="hl opt">=</span> <span class="hl str">&quot;data.db&quot;</span>
+conn <span class="hl opt">=</span> <span class="hl kwd">create_connection</span><span class="hl opt">(</span>database<span class="hl opt">)</span>
+
+
+<span class="hl kwa">def</span> <span class="hl kwd">selectVideos</span><span class="hl opt">(</span>connect<span class="hl opt">):</span>
+    cur <span class="hl opt">=</span> connect<span class="hl opt">.</span><span class="hl kwd">cursor</span><span class="hl opt">()</span>
+    cur<span class="hl opt">.</span><span class="hl kwd">execute</span><span class="hl opt">(</span><span class="hl str">&quot;SELECT * FROM Videos&quot;</span><span class="hl opt">)</span>
+
+    rows <span class="hl opt">=</span> cur<span class="hl opt">.</span><span class="hl kwd">fetchall</span><span class="hl opt">()</span>
+    <span class="hl kwa">return</span> rows
+
+
+<span class="hl kwa">def</span> <span class="hl kwd">selectUsers</span><span class="hl opt">(</span>connect<span class="hl opt">):</span>
+    cur <span class="hl opt">=</span> connect<span class="hl opt">.</span><span class="hl kwd">cursor</span><span class="hl opt">()</span>
+    cur<span class="hl opt">.</span><span class="hl kwd">execute</span><span class="hl opt">(</span><span class="hl str">&quot;SELECT * FROM Users&quot;</span><span class="hl opt">)</span>
+
+    rows <span class="hl opt">=</span> cur<span class="hl opt">.</span><span class="hl kwd">fetchall</span><span class="hl opt">()</span>
+    <span class="hl kwa">return</span> rows
+
+
+<span class="hl kwa">def</span> <span class="hl kwd">selectHistory</span><span class="hl opt">(</span>connect<span class="hl opt">):</span>
+    cur <span class="hl opt">=</span> connect<span class="hl opt">.</span><span class="hl kwd">cursor</span><span class="hl opt">()</span>
+    cur<span class="hl opt">.</span><span class="hl kwd">execute</span><span class="hl opt">(</span><span class="hl str">&quot;SELECT * FROM WatchHistory&quot;</span><span class="hl opt">)</span>
+
+    rows <span class="hl opt">=</span> cur<span class="hl opt">.</span><span class="hl kwd">fetchall</span><span class="hl opt">()</span>
+    <span class="hl kwa">return</span> rows
+
+
+<span class="hl kwa">def</span> <span class="hl kwd">main</span><span class="hl opt">():</span>
+    <span class="hl kwa">global</span> userID
+    <span class="hl kwa">for</span> line <span class="hl kwa">in</span> sys<span class="hl opt">.</span>stdin<span class="hl opt">:</span>
+        userID <span class="hl opt">=</span> line
+
+    return_to_js <span class="hl opt">= []</span>
+    res_list <span class="hl opt">=</span> <span class="hl kwd">start</span><span class="hl opt">()</span>
+    <span class="hl kwa">for</span> res <span class="hl kwa">in</span> res_list<span class="hl opt">:</span>
+        return_to_js<span class="hl opt">.</span><span class="hl kwd">append</span><span class="hl opt">(</span><span class="hl kwb">str</span><span class="hl opt">(</span>res<span class="hl opt">.</span>video<span class="hl opt">))</span>
+
+    <span class="hl kwa">print</span><span class="hl opt">(</span>return_to_js<span class="hl opt">)</span>
+
+
+<span class="hl kwa">class</span> <span class="hl kwd">Video</span><span class="hl opt">(</span><span class="hl kwb">object</span><span class="hl opt">):</span>
+    <span class="hl kwa">def</span> <span class="hl kwd">__init__</span><span class="hl opt">(</span>self<span class="hl opt">,</span> video<span class="hl opt">,</span> value<span class="hl opt">,</span> labels<span class="hl opt">):</span>
+        self<span class="hl opt">.</span>video <span class="hl opt">=</span> video
+        self<span class="hl opt">.</span>value <span class="hl opt">=</span> value
+        self<span class="hl opt">.</span>labels <span class="hl opt">=</span> labels
+
+    <span class="hl kwa">def</span> <span class="hl kwd">__repr__</span><span class="hl opt">(</span>self<span class="hl opt">):</span>
+        <span class="hl kwa">return</span> <span class="hl str">&apos;{}&apos;</span><span class="hl opt">.</span><span class="hl kwd">format</span><span class="hl opt">(</span>self<span class="hl opt">.</span>video<span class="hl opt">)</span>
+
+    <span class="hl kwa">def</span> <span class="hl kwd">getkey</span><span class="hl opt">(</span>self<span class="hl opt">):</span>
+        <span class="hl kwa">return</span> self<span class="hl opt">.</span>value
+
+    <span class="hl kwa">def</span> <span class="hl kwd">getlabel</span><span class="hl opt">(</span>self<span class="hl opt">):</span>
+        <span class="hl kwa">return</span> self<span class="hl opt">.</span>labels
+
+
+<span class="hl kwa">def</span> <span class="hl kwd">cosine</span><span class="hl opt">(</span>a<span class="hl opt">,</span> b<span class="hl opt">):</span>
+    numer <span class="hl opt">=</span> <span class="hl kwb">sum</span><span class="hl opt">(</span><span class="hl kwb">float</span><span class="hl opt">(</span>i<span class="hl opt">) *</span> <span class="hl kwb">float</span><span class="hl opt">(</span>j<span class="hl opt">)</span> <span class="hl kwa">for</span> i<span class="hl opt">,</span> j <span class="hl kwa">in</span> <span class="hl kwb">zip</span><span class="hl opt">(</span>a<span class="hl opt">,</span> b<span class="hl opt">))</span>
+    denomin <span class="hl opt">=</span> <span class="hl kwd">rooted</span><span class="hl opt">(</span>a<span class="hl opt">) *</span> <span class="hl kwd">rooted</span><span class="hl opt">(</span>b<span class="hl opt">)</span>
+    <span class="hl kwa">return</span> numer <span class="hl opt">/</span> <span class="hl kwb">float</span><span class="hl opt">(</span>denomin<span class="hl opt">)</span>
+
+
+<span class="hl kwa">def</span> <span class="hl kwd">rooted</span><span class="hl opt">(</span>i<span class="hl opt">):</span>
+    <span class="hl kwa">return</span> math<span class="hl opt">.</span><span class="hl kwd">sqrt</span><span class="hl opt">(</span><span class="hl kwb">sum</span><span class="hl opt">([</span><span class="hl kwb">float</span><span class="hl opt">(</span>a<span class="hl opt">) *</span> <span class="hl kwb">float</span><span class="hl opt">(</span>a<span class="hl opt">)</span> <span class="hl kwa">for</span> a <span class="hl kwa">in</span> i<span class="hl opt">]))</span>
+
+
+<span class="hl kwa">def</span> <span class="hl kwd">content</span><span class="hl opt">():</span>
+    with conn<span class="hl opt">:</span>
+        db_videos <span class="hl opt">=</span> <span class="hl kwd">selectVideos</span><span class="hl opt">(</span>conn<span class="hl opt">)</span>
+        db_users <span class="hl opt">=</span> <span class="hl kwd">selectUsers</span><span class="hl opt">(</span>conn<span class="hl opt">)</span>
+
+    finalist <span class="hl opt">= []</span>
+
+    <span class="hl kwa">for</span> elems <span class="hl kwa">in</span> db_users<span class="hl opt">:</span>
+        <span class="hl kwa">if</span> elems<span class="hl opt">[</span><span class="hl num">0</span><span class="hl opt">] ==</span> <span class="hl kwb">int</span><span class="hl opt">(</span>userID<span class="hl opt">):</span>
+            <span class="hl kwa">global</span> userP
+            userP <span class="hl opt">=</span> elems<span class="hl opt">[</span><span class="hl num">2</span><span class="hl opt">]</span>
+
+    <span class="hl kwa">for</span> elems <span class="hl kwa">in</span> db_videos<span class="hl opt">:</span>
+        userP0 <span class="hl opt">=</span> userP<span class="hl opt">.</span><span class="hl kwd">split</span><span class="hl opt">(</span><span class="hl str">&quot;;&quot;</span><span class="hl opt">)</span>
+        labels <span class="hl opt">=</span> <span class="hl kwb">list</span><span class="hl opt">(</span>elems<span class="hl opt">[</span>labelPosInDB<span class="hl opt">])[:</span>labelNum<span class="hl opt">]</span>
+        finalist<span class="hl opt">.</span><span class="hl kwd">append</span><span class="hl opt">(</span><span class="hl kwd">Video</span><span class="hl opt">(</span>elems<span class="hl opt">[</span><span class="hl num">0</span><span class="hl opt">],</span> <span class="hl kwd">cosine</span><span class="hl opt">(</span>userP0<span class="hl opt">,</span> labels<span class="hl opt">),</span> labels<span class="hl opt">))</span>
+
+    finalist <span class="hl opt">=</span> <span class="hl kwb">sorted</span><span class="hl opt">(</span>finalist<span class="hl opt">,</span> key<span class="hl opt">=</span><span class="hl kwa">lambda</span> x<span class="hl opt">:</span> x<span class="hl opt">.</span>value<span class="hl opt">,</span> reverse<span class="hl opt">=</span><span class="hl kwa">True</span><span class="hl opt">)[:</span>videoNum<span class="hl opt">]</span>
+
+    <span class="hl kwa">return</span> finalist
+
+
+<span class="hl kwa">def</span> <span class="hl kwd">diversity</span><span class="hl opt">(</span>contentlist<span class="hl opt">):</span>
+
+    matrix <span class="hl opt">=</span> np<span class="hl opt">.</span><span class="hl kwd">empty</span><span class="hl opt">((</span><span class="hl num">0</span><span class="hl opt">,</span> labelNum<span class="hl opt">))</span>
+    <span class="hl kwa">for</span> each <span class="hl kwa">in</span> contentlist<span class="hl opt">:</span>
+        matrix <span class="hl opt">=</span> np<span class="hl opt">.</span><span class="hl kwd">append</span><span class="hl opt">(</span>matrix<span class="hl opt">, [</span>each<span class="hl opt">.</span>labels<span class="hl opt">],</span> axis<span class="hl opt">=</span><span class="hl num">0</span><span class="hl opt">)</span>
+
+    <span class="hl kwb">reversed</span> <span class="hl opt">=</span> matrix<span class="hl opt">.</span><span class="hl kwd">transpose</span><span class="hl opt">()</span>
+
+    totalsum <span class="hl opt">=</span> <span class="hl num">0</span>
+    div <span class="hl opt">= []</span>
+
+    <span class="hl kwa">for</span> line <span class="hl kwa">in</span> <span class="hl kwb">reversed</span><span class="hl opt">:</span>
+        div<span class="hl opt">.</span><span class="hl kwd">append</span><span class="hl opt">(</span>np<span class="hl opt">.</span><span class="hl kwd">count_nonzero</span><span class="hl opt">(</span>line <span class="hl opt">==</span> <span class="hl str">&apos;1&apos;</span><span class="hl opt">) /</span> videoNum<span class="hl opt">)</span>
+
+    <span class="hl kwa">for</span> each <span class="hl kwa">in</span> matrix<span class="hl opt">:</span>
+        <span class="hl kwa">for</span> pos <span class="hl kwa">in</span> <span class="hl kwb">range</span><span class="hl opt">(</span>labelNum<span class="hl opt">):</span>
+            totalsum <span class="hl opt">+= (</span><span class="hl kwb">float</span><span class="hl opt">(</span>each<span class="hl opt">[</span>pos<span class="hl opt">]) -</span> div<span class="hl opt">[</span>pos<span class="hl opt">]) **</span> <span class="hl num">2</span>
+
+    std_dev <span class="hl opt">=</span> math<span class="hl opt">.</span><span class="hl kwd">sqrt</span><span class="hl opt">(</span>totalsum <span class="hl opt">/</span> videoNum<span class="hl opt">)</span>
+
+    <span class="hl kwa">return</span> std_dev
+
+
+<span class="hl kwa">class</span> <span class="hl kwd">User</span><span class="hl opt">(</span><span class="hl kwb">object</span><span class="hl opt">):</span>
+    <span class="hl kwa">def</span> <span class="hl kwd">__init__</span><span class="hl opt">(</span>self<span class="hl opt">,</span> user<span class="hl opt">,</span> value<span class="hl opt">,</span> videos<span class="hl opt">):</span>
+        self<span class="hl opt">.</span>user <span class="hl opt">=</span> user
+        self<span class="hl opt">.</span>value <span class="hl opt">=</span> value
+        self<span class="hl opt">.</span>videos <span class="hl opt">=</span> videos
+
+    <span class="hl kwa">def</span> <span class="hl kwd">__repr__</span><span class="hl opt">(</span>self<span class="hl opt">):</span>
+        <span class="hl kwa">return</span> <span class="hl str">&apos;{} {} {}&apos;</span><span class="hl opt">.</span><span class="hl kwd">format</span><span class="hl opt">(</span>self<span class="hl opt">.</span>user<span class="hl opt">,</span> self<span class="hl opt">.</span>value<span class="hl opt">,</span> self<span class="hl opt">.</span>videos<span class="hl opt">)</span>
+
+    <span class="hl kwa">def</span> <span class="hl kwd">getuser</span><span class="hl opt">(</span>self<span class="hl opt">):</span>
+        <span class="hl kwa">return</span> self<span class="hl opt">.</span>user
+
+    <span class="hl kwa">def</span> <span class="hl kwd">getkey</span><span class="hl opt">(</span>self<span class="hl opt">):</span>
+        <span class="hl kwa">return</span> self<span class="hl opt">.</span>value
+
+    <span class="hl kwa">def</span> <span class="hl kwd">getlist</span><span class="hl opt">(</span>self<span class="hl opt">):</span>
+        <span class="hl kwa">return</span> self<span class="hl opt">.</span>videos
+
+
+<span class="hl kwa">def</span> <span class="hl kwd">dis</span><span class="hl opt">(</span>a<span class="hl opt">,</span> b<span class="hl opt">):</span>
+    numer <span class="hl opt">=</span> <span class="hl kwb">sum</span><span class="hl opt">(</span><span class="hl kwb">float</span><span class="hl opt">(</span>i<span class="hl opt">) *</span> <span class="hl kwb">float</span><span class="hl opt">(</span>j<span class="hl opt">)</span> <span class="hl kwa">for</span> i<span class="hl opt">,</span> j <span class="hl kwa">in</span> <span class="hl kwb">zip</span><span class="hl opt">(</span>a<span class="hl opt">,</span> b<span class="hl opt">))</span>
+    denomin <span class="hl opt">=</span> <span class="hl kwd">rooted</span><span class="hl opt">(</span>a<span class="hl opt">) *</span> <span class="hl kwd">rooted</span><span class="hl opt">(</span>b<span class="hl opt">)</span>
+    <span class="hl kwa">return</span> numer <span class="hl opt">/</span> <span class="hl kwb">float</span><span class="hl opt">(</span>denomin<span class="hl opt">)</span>
+
+
+<span class="hl kwa">def</span> <span class="hl kwd">rooted</span><span class="hl opt">(</span>i<span class="hl opt">):</span>
+    <span class="hl kwa">return</span> math<span class="hl opt">.</span><span class="hl kwd">sqrt</span><span class="hl opt">(</span><span class="hl kwb">sum</span><span class="hl opt">([</span><span class="hl kwb">float</span><span class="hl opt">(</span>a<span class="hl opt">) *</span> <span class="hl kwb">float</span><span class="hl opt">(</span>a<span class="hl opt">)</span> <span class="hl kwa">for</span> a <span class="hl kwa">in</span> i<span class="hl opt">]))</span>
+
+
+<span class="hl kwa">def</span> <span class="hl kwd">collaborative</span><span class="hl opt">():</span>
+    with conn<span class="hl opt">:</span>
+        db_users <span class="hl opt">=</span> <span class="hl kwd">selectUsers</span><span class="hl opt">(</span>conn<span class="hl opt">)</span>
+        db_history <span class="hl opt">=</span> <span class="hl kwd">selectHistory</span><span class="hl opt">(</span>conn<span class="hl opt">)</span>
+    <span class="hl kwa">try</span><span class="hl opt">:</span>
+        finalist <span class="hl opt">= []</span>
+        userP0 <span class="hl opt">= []</span>
+
+        <span class="hl kwa">for</span> elems <span class="hl kwa">in</span> db_users<span class="hl opt">:</span>
+            <span class="hl kwa">if</span> elems<span class="hl opt">[</span><span class="hl num">0</span><span class="hl opt">] ==</span> <span class="hl kwb">int</span><span class="hl opt">(</span>userID<span class="hl opt">):</span>
+                userP0 <span class="hl opt">=</span> <span class="hl kwb">list</span><span class="hl opt">(</span>elems<span class="hl opt">[</span><span class="hl num">2</span><span class="hl opt">].</span><span class="hl kwd">split</span><span class="hl opt">(</span><span class="hl str">&quot;;&quot;</span><span class="hl opt">))[:</span><span class="hl num">16</span><span class="hl opt">]</span>
+
+        <span class="hl kwa">for</span> elems <span class="hl kwa">in</span> db_history<span class="hl opt">:</span>
+            <span class="hl kwa">if</span> elems<span class="hl opt">[</span><span class="hl num">0</span><span class="hl opt">] ==</span> <span class="hl kwb">int</span><span class="hl opt">(</span>userID<span class="hl opt">):</span>
+                user_history<span class="hl opt">.</span><span class="hl kwd">append</span><span class="hl opt">(</span>elems<span class="hl opt">[</span><span class="hl num">1</span><span class="hl opt">])</span>
+
+        <span class="hl kwa">for</span> users <span class="hl kwa">in</span> db_users<span class="hl opt">:</span>
+            <span class="hl kwa">if</span> users<span class="hl opt">[</span><span class="hl num">0</span><span class="hl opt">] !=</span> <span class="hl kwb">int</span><span class="hl opt">(</span>userID<span class="hl opt">):</span>
+                others <span class="hl opt">=</span> <span class="hl kwb">list</span><span class="hl opt">(</span>users<span class="hl opt">[</span><span class="hl num">2</span><span class="hl opt">].</span><span class="hl kwd">split</span><span class="hl opt">(</span><span class="hl str">&quot;;&quot;</span><span class="hl opt">))[:</span><span class="hl num">16</span><span class="hl opt">]</span>
+                otherhistories <span class="hl opt">= []</span>
+                <span class="hl kwa">for</span> histories <span class="hl kwa">in</span> db_history<span class="hl opt">:</span>
+                    <span class="hl kwa">if</span> users<span class="hl opt">[</span><span class="hl num">0</span><span class="hl opt">] ==</span> histories<span class="hl opt">[</span><span class="hl num">0</span><span class="hl opt">]:</span>
+                        otherhistories<span class="hl opt">.</span><span class="hl kwd">append</span><span class="hl opt">(</span>histories<span class="hl opt">[</span><span class="hl num">1</span><span class="hl opt">])</span>
+                finalist<span class="hl opt">.</span><span class="hl kwd">append</span><span class="hl opt">(</span><span class="hl kwd">User</span><span class="hl opt">(</span>users<span class="hl opt">[</span><span class="hl num">0</span><span class="hl opt">],</span> <span class="hl kwd">dis</span><span class="hl opt">(</span>userP0<span class="hl opt">,</span> others<span class="hl opt">),</span> otherhistories<span class="hl opt">))</span>
+
+        userlist <span class="hl opt">=</span> <span class="hl kwb">sorted</span><span class="hl opt">(</span>finalist<span class="hl opt">,</span> key<span class="hl opt">=</span><span class="hl kwa">lambda</span> x<span class="hl opt">:</span> x<span class="hl opt">.</span>value<span class="hl opt">,</span> reverse<span class="hl opt">=</span><span class="hl kwa">True</span><span class="hl opt">)</span>
+
+        <span class="hl kwa">return</span> userlist
+
+    <span class="hl kwa">except</span><span class="hl opt">:</span>
+        <span class="hl kwa">print</span><span class="hl opt">(</span><span class="hl str">&quot;Collaborative Filtering is failed&quot;</span><span class="hl opt">)</span>
+
+
+<span class="hl kwa">def</span> <span class="hl kwd">mix</span><span class="hl opt">(</span>cnt<span class="hl opt">,</span> topusers<span class="hl opt">,</span> contentlist<span class="hl opt">):</span>
+    check <span class="hl opt">=</span> <span class="hl kwa">True</span>
+    userLabels <span class="hl opt">=</span> userP<span class="hl opt">.</span><span class="hl kwd">split</span><span class="hl opt">(</span><span class="hl str">&quot;;&quot;</span><span class="hl opt">)</span>
+
+    <span class="hl kwa">for</span> x <span class="hl kwa">in</span> topusers<span class="hl opt">:</span>
+        temp <span class="hl opt">=</span> x<span class="hl opt">.</span>videos
+        <span class="hl kwa">for</span> i <span class="hl kwa">in</span> <span class="hl kwb">range</span><span class="hl opt">(</span><span class="hl num">0</span><span class="hl opt">,</span> <span class="hl kwb">len</span><span class="hl opt">(</span>temp<span class="hl opt">)):</span>
+            newV <span class="hl opt">=</span> <span class="hl kwb">str</span><span class="hl opt">(</span>temp<span class="hl opt">[</span>i<span class="hl opt">])</span>
+
+            <span class="hl kwa">for</span> y <span class="hl kwa">in</span> contentlist<span class="hl opt">:</span>
+                <span class="hl kwa">if</span> <span class="hl kwb">str</span><span class="hl opt">(</span>y<span class="hl opt">.</span>video<span class="hl opt">) ==</span> newV <span class="hl kwa">or</span> newV <span class="hl opt">==</span> <span class="hl str">&apos;</span><span class="hl esc">\n</span><span class="hl str">&apos;</span> <span class="hl kwa">or</span> user_history<span class="hl num">.__</span>contains<span class="hl num">__</span><span class="hl opt">(</span>newV<span class="hl opt">)</span> <span class="hl kwa">or</span> <span class="hl kwb">len</span><span class="hl opt">(</span>newV<span class="hl opt">) !=</span> <span class="hl num">11</span><span class="hl opt">:</span>
+                    check <span class="hl opt">=</span> <span class="hl kwa">False</span>
+            <span class="hl kwa">if</span> check<span class="hl opt">:</span>
+                contentlist<span class="hl opt">[</span>cnt<span class="hl opt">[</span><span class="hl num">0</span><span class="hl opt">] *</span> <span class="hl num">2</span> <span class="hl opt">%</span> videoNum<span class="hl opt">].</span>video <span class="hl opt">=</span> newV
+                forlabels <span class="hl opt">=</span> <span class="hl kwd">findlabel</span><span class="hl opt">(</span>newV<span class="hl opt">)</span>
+                contentlist<span class="hl opt">[</span>cnt<span class="hl opt">[</span><span class="hl num">0</span><span class="hl opt">] *</span> <span class="hl num">2</span> <span class="hl opt">%</span> videoNum<span class="hl opt">].</span>value <span class="hl opt">=</span> <span class="hl kwd">cosine</span><span class="hl opt">(</span>userLabels<span class="hl opt">,</span> forlabels<span class="hl opt">)</span>
+                contentlist<span class="hl opt">[</span>cnt<span class="hl opt">[</span><span class="hl num">0</span><span class="hl opt">] *</span> <span class="hl num">2</span> <span class="hl opt">%</span> videoNum<span class="hl opt">].</span>labels <span class="hl opt">=</span> forlabels
+                cnt<span class="hl opt">[</span><span class="hl num">0</span><span class="hl opt">] +=</span> <span class="hl num">1</span>
+                <span class="hl kwa">return</span> contentlist
+            check <span class="hl opt">=</span> <span class="hl kwa">True</span>
+
+    <span class="hl kwa">return</span> contentlist
+
+
+<span class="hl kwa">def</span> <span class="hl kwd">Avg_Simil</span><span class="hl opt">(</span><span class="hl kwb">list</span><span class="hl opt">):</span>
+    newlist <span class="hl opt">= []</span>
+    <span class="hl kwa">for</span> each <span class="hl kwa">in</span> <span class="hl kwb">list</span><span class="hl opt">:</span>
+        newlist<span class="hl opt">.</span><span class="hl kwd">append</span><span class="hl opt">(</span>each<span class="hl opt">.</span>value<span class="hl opt">)</span>
+    <span class="hl kwa">return</span> np<span class="hl opt">.</span><span class="hl kwd">average</span><span class="hl opt">(</span>newlist<span class="hl opt">)</span>
+
+
+<span class="hl kwa">def</span> <span class="hl kwd">Clone</span><span class="hl opt">(</span>li0<span class="hl opt">):</span>
+    li_copy <span class="hl opt">=</span> li0<span class="hl opt">[:]</span>
+    <span class="hl kwa">return</span> li_copy
+
+
+<span class="hl kwa">def</span> <span class="hl kwd">findlabel</span><span class="hl opt">(</span>new<span class="hl opt">):</span>
+    label <span class="hl opt">=</span> <span class="hl str">&quot;&quot;</span>
+    fv <span class="hl opt">=</span> <span class="hl kwb">open</span><span class="hl opt">(</span><span class="hl str">&apos;rawdata/RealVideoData.csv&apos;</span><span class="hl opt">)</span>
+
+    <span class="hl kwa">for</span> line <span class="hl kwa">in</span> fv<span class="hl opt">:</span>
+        elems <span class="hl opt">=</span> line<span class="hl opt">.</span><span class="hl kwd">split</span><span class="hl opt">(</span><span class="hl str">&quot;,&quot;</span><span class="hl opt">)</span>
+        <span class="hl kwa">if</span> <span class="hl opt">(</span>new <span class="hl opt">==</span> elems<span class="hl opt">[</span><span class="hl num">0</span><span class="hl opt">]):</span>
+            label <span class="hl opt">=</span> <span class="hl kwb">list</span><span class="hl opt">(</span>elems<span class="hl opt">[</span><span class="hl num">1</span><span class="hl opt">])[:</span>labelNum<span class="hl opt">]</span>
+
+    fv<span class="hl opt">.</span><span class="hl kwd">close</span><span class="hl opt">()</span>
+    <span class="hl kwa">return</span> label
+
+
+<span class="hl kwa">def</span> <span class="hl kwd">start</span><span class="hl opt">():</span>
+    contentlist <span class="hl opt">=</span> <span class="hl kwd">content</span><span class="hl opt">()</span>
+    new_contentlist <span class="hl opt">=</span> copy<span class="hl opt">.</span><span class="hl kwd">deepcopy</span><span class="hl opt">(</span>contentlist<span class="hl opt">)</span>
+
+    std_dev <span class="hl opt">=</span> <span class="hl kwd">diversity</span><span class="hl opt">(</span>contentlist<span class="hl opt">)</span>
+    topusers <span class="hl opt">=</span> <span class="hl kwd">collaborative</span><span class="hl opt">()</span>
+    newsum <span class="hl opt">=</span> <span class="hl num">0</span>
+
+    <span class="hl slc"># normalise</span>
+    <span class="hl kwa">for</span> user <span class="hl kwa">in</span> topusers<span class="hl opt">:</span>
+        newsum <span class="hl opt">+=</span> user<span class="hl opt">.</span>value
+    <span class="hl kwa">for</span> user <span class="hl kwa">in</span> topusers<span class="hl opt">:</span>
+        user<span class="hl opt">.</span>value <span class="hl opt">=</span> user<span class="hl opt">.</span>value<span class="hl opt">/</span>newsum
+
+    avg_simil <span class="hl opt">=</span> <span class="hl kwd">Avg_Simil</span><span class="hl opt">(</span>contentlist<span class="hl opt">)</span>
+    max_val <span class="hl opt">=</span> <span class="hl kwb">max</span><span class="hl opt">(</span><span class="hl num">0</span><span class="hl opt">, (</span>avg_simil<span class="hl opt">*(</span><span class="hl num">1</span><span class="hl opt">-</span>diversity_weight<span class="hl opt">) + (</span>diversity_weight<span class="hl opt">*</span>std_dev<span class="hl opt">))/</span><span class="hl num">2</span><span class="hl opt">)</span>
+
+    cnt <span class="hl opt">= [</span><span class="hl num">1</span><span class="hl opt">]</span>
+    <span class="hl kwa">while</span> cnt<span class="hl opt">[</span><span class="hl num">0</span><span class="hl opt">] &lt; ((</span>videoNum<span class="hl opt">/</span><span class="hl num">2</span><span class="hl opt">)+</span><span class="hl num">1</span><span class="hl opt">):</span>
+        std_dev <span class="hl opt">=</span> <span class="hl kwd">diversity</span><span class="hl opt">(</span><span class="hl kwd">mix</span><span class="hl opt">(</span>cnt<span class="hl opt">,</span> topusers<span class="hl opt">,</span> contentlist<span class="hl opt">))</span>
+        new_avg_simil <span class="hl opt">=</span> <span class="hl kwd">Avg_Simil</span><span class="hl opt">(</span>contentlist<span class="hl opt">)</span>
+        new_threshold_changed <span class="hl opt">= (</span>new_avg_simil<span class="hl opt">*(</span><span class="hl num">1</span><span class="hl opt">-</span>diversity_weight<span class="hl opt">) + (</span>diversity_weight<span class="hl opt">*</span>std_dev<span class="hl opt">))/</span><span class="hl num">2</span>
+
+        <span class="hl kwa">if</span> new_threshold_changed <span class="hl opt">&gt;</span> max_val<span class="hl opt">:</span>
+            new_contentlist <span class="hl opt">=</span> copy<span class="hl opt">.</span><span class="hl kwd">deepcopy</span><span class="hl opt">(</span>contentlist<span class="hl opt">)</span>
+
+        max_val <span class="hl opt">=</span> <span class="hl kwb">max</span><span class="hl opt">(</span>max_val<span class="hl opt">,</span> new_threshold_changed<span class="hl opt">)</span>
+
+    <span class="hl kwa">return</span> new_contentlist
+
+
+<span class="hl kwa">def</span> <span class="hl kwd">run</span><span class="hl opt">(</span>thisUser<span class="hl opt">):</span>
+    <span class="hl kwa">global</span> userID
+    userID <span class="hl opt">=</span> thisUser
+    <span class="hl kwa">return</span> <span class="hl kwd">start</span><span class="hl opt">()</span>
+
+
+<span class="hl kwd">main</span><span class="hl opt">()</span>
+</pre>
+</body>
+</html>
+<!--HTML generated by highlight 3.43, http://www.andre-simon.de/-->
